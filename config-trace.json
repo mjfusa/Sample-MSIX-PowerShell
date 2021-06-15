@@ -1,0 +1,33 @@
+{
+  "applications": [
+    {
+      "id": "App",
+      "executable": "ConsoleApp2/ConsoleApp2.exe",
+      "workingDirectory": "ConsoleApp2/",
+      "stopOnScriptError": false,
+      "startScript": {
+        "scriptPath": "Installer.ps1",
+        "runInVirtualEnvironment": true,
+        "showWindow": true,
+        "waitForScriptToFinish": true,
+        "runOnce": true
+      }
+    }
+  ],
+  "processes": [
+    {
+      "executable": ".*",
+      "fixups": [
+        {
+          "dll": "TraceFixup.dll",
+          "config": {
+            "traceMethod": "outputDebugString",
+            "traceLevels": {
+              "default": "allFailures"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
