@@ -26,7 +26,7 @@ Here is the basic layout for the Package Support Framework files needed to run s
 
 Note: The files necessary for PSF are in the root.
 
-Note 2: Both 32 and 64 bit PSF binaries required even though the machine you’re installing on is one or the other.
+Note 2: Both 32 and 64 bit [PSF binaries](https://github.com/Microsoft/MSIX-PackageSupportFramework/#get-the-pre-built-package-support-framework-binaries) required even though the machine you’re installing on is one or the other.
 
 Here is the config.json:
 
@@ -49,6 +49,7 @@ Here is the config.json:
   ]
 }
 ```
+Also include is a sample config.json showing how to setup [PSF Tracing](https://docs.microsoft.com/en-us/windows/msix/psf/package-support-framework#use-the-trace-fixup). See config-trace.json.
 
 Here are the steps for installing the certificate the that sample MSIX is signed with:
 
