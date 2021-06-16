@@ -1,10 +1,10 @@
 ## Sample: MSIX / PowerShell Script / Registry Init
 
-Included in this sample is an MSIX that creates installs a console Hello World app and updates registry keys with a PowerShell script. It first creates registry keys by importing a .REG file - also in the script.
+Included in this sample is an MSIX that installs a console Hello World app and updates registry keys with a PowerShell script. It first creates registry keys by importing a .REG file - also in the script.
 
 The file [StartingScriptWrapper.PS1](https://docs.microsoft.com/en-us/windows/msix/psf/run-scripts-with-package-support-framework) must also be included in the same folder as the script. This runs some prerequisites required to run the target script.
 
-When you install the sample MSIX, it will run your script. Be sure to install the certificate first. See the instructions at the bottom of this file. To verify that the registry key were created, you must run regedit in the context of the MSIX package. You can do this with the following (run as admin) PowerShell command:
+When you install the sample MSIX, it will run your script. Be sure to install the certificate first. See the instructions at the bottom of this file. To verify that the registry keys were created, you must run regedit in the context of the MSIX package. You can do this with the following (run as admin) PowerShell command:
 
 ```PowerShell
 Invoke-CommandInDesktopPackage -PackageFamilyName "ConsoleAppSample_n3sawgb4qe5x4" -AppId "App" -Command "regedt32.exe" -PreventBreakaway
@@ -49,7 +49,7 @@ Here is the config.json:
   ]
 }
 ```
-Also include is a sample config.json showing how to setup [PSF Tracing](https://docs.microsoft.com/en-us/windows/msix/psf/package-support-framework#use-the-trace-fixup). See config-trace.json.
+Also included is a sample config.json showing how to setup [PSF Tracing](https://docs.microsoft.com/en-us/windows/msix/psf/package-support-framework#use-the-trace-fixup). See config-trace.json.
 
 Here are the steps for installing the certificate the that sample MSIX is signed with:
 
